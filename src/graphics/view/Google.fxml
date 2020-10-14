@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="graphics.controller.Controller">
+    <MenuBar prefHeight="29.0" prefWidth="600.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="About">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#goToAbout" text="About Me"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#goToAddWord" text="Add Word"/>
+                    <MenuItem mnemonicParsing="false" onAction="#goToRemoveWord" text="Remove Word"/>
+                    <MenuItem mnemonicParsing="false" onAction="#goToEditWord" text="Edit Word"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Saved"/>
+            <Menu mnemonicParsing="false" text="Search">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#goToSearch" text="Search by Dictionary"/>
+                    <MenuItem mnemonicParsing="false" text="Search by Google Translate"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <ToolBar layoutX="-1.0" layoutY="29.0" prefHeight="58.0" prefWidth="600.0">
+        <items>
+            <Text fill="#333333" layoutX="222.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Translate this sentence" textAlignment="CENTER" wrappingWidth="581.0099868774414">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </Text>
+        </items>
+    </ToolBar>
+    <Button fx:id="buttonSearch" layoutX="481.0" layoutY="41.0" mnemonicParsing="false" prefHeight="34.0"
+            prefWidth="82.0" text="Speak">
+        <graphic>
+            <ImageView fitHeight="19.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true"
+                       style="-fx-opacity: 50%;">
+                <image>
+                    <Image url="@../images/speak.png"/>
+                </image>
+            </ImageView>
+        </graphic>
+    </Button>
+    <TextField fx:id="getTextSentence" onAction="#google" alignment="TOP_LEFT" layoutX="56.0" layoutY="123.0"
+               prefHeight="127.0" prefWidth="484.0" promptText="Enter sentence"/>
+    <TextArea fx:id="showExplainSentence" layoutX="52.0" layoutY="284.0" prefHeight="188.0" prefWidth="484.0"
+              promptText="Meaning will appear here" wrapText="true"/>
+    <Label layoutX="254.0" layoutY="96.0" text="English sentence" textAlignment="CENTER"/>
+    <Label layoutX="236.0" layoutY="258.0" text="Vietnamese sentence" textAlignment="CENTER"/>
+    <children/>
+</Pane>
